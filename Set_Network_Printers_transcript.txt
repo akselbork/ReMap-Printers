@@ -1,0 +1,39 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200820154015
+Username: SRVPRT01\Administrator
+RunAs User: SRVPRT01\Administrator
+Configuration Name: 
+Machine: SRVPRT01 (Microsoft Windows NT 10.0.17763.0)
+Host Application: powershell.exe -windowstyle hidden -executionpolicy bypass -command & c:\data\SetNetworkPrinters.ps1 -old_servers 'srvdc01','srvdc02' -new_server 'srvprt02'
+Process ID: 4912
+PSVersion: 5.1.17763.1007
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17763.1007
+BuildVersion: 10.0.17763.1007
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Data\Set_Network_Printers_transcript.txt
+START checking if any networkprinter is installed on SRVPRT01
+OLD Servers: System.Object[] System.Object[]
+OLD Servers Count: 2
+LOOPING through all installed printers
+\\srvprt02\ABG_Xerox_7525
+TESTING: Does printerqueu \\srvprt02\ABG_Xerox_7525 exists...
+WARNING: \\srvprt02\ABG_Xerox_7525 does not exist.. old printer is going to be deleted...
+\\srvdc01\ABG_Xerox_7525 is being deleted....
+\\srvprt02\A4_PRN_KM_5050
+TESTING: Does printerqueu \\srvprt02\A4_PRN_KM_5050 exists...
+ADDING: \\srvprt02\A4_PRN_KM_5050
+\\Srvdc01\A4_PRN_KM_5050 is being deleted....
+TOTAL:           Installed Network printers - 3
+NEW:             Added new network printers - 1
+REMOVED:         Deleted network printers   - 2
+DEFAULT PRINTER: \\srvprt02\A4_PRN_KM_5050
+**********************
+Windows PowerShell transcript end
+End time: 20200820154108
+**********************

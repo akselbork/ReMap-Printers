@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2020-08-20T13:39:14.7541707</Date>
+    <Author>SRVPRT01\Administrator</Author>
+    <URI>Remap Networkprinters</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <GroupId>S-1-5-32-545</GroupId>
+      <RunLevel>HighestAvailable</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <LogonTrigger>
+      <Delay>PT15S</Delay>
+    </LogonTrigger>
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>powershell.exe</Command>
+      <Arguments>-windowstyle hidden -executionpolicy bypass -command "&amp; c:\data\SetNetworkPrinters.ps1 -old_servers 'srvdc01','srvdc02' -new_server 'srvprt02'"</Arguments>
+    </Exec>
+  </Actions>
+</Task>
