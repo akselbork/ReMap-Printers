@@ -9,10 +9,26 @@ The task was to reinstall the printqueues on client computers after having move 
 But as the new October 2021 security patch seems to force the printerqueues to be reinstalled on the printservers, then the queues on the client is likewice having to be reinstalled.
 
 
-INPUT:        TYPE   NOTE
---------------------------------------------
-Old_servers   Array  Name of the existing printservers (can be multiple)
-New_server    string Name of the new printserver
+
+<table>
+    <tr>
+        <td>INPUT</td>
+        <td>TYPE</td>
+        <td>NOTE</td>
+    </tr>
+    <tr>
+        <td>Old_servers</td>
+        <td>Array</td>
+        <td>Name of the existing printservers (can be multiple)</td>
+    </tr>
+    <tr>
+        <td>New_server</td>
+        <td>string</td>
+        <td>Name of the new printserver</td>
+    </tr>
+</table>
+
+
 
 
 Following steps within the script
