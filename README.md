@@ -8,7 +8,32 @@ The task was to reinstall the printqueues on client computers after having move 
 
 But as the new October 2021 security patch seems to force the printerqueues to be reinstalled on the printservers, then the queues on the client is likewice having to be reinstalled.
 
+To get is to work on the client computers, a PowerShell script is run by a Scheduled task
+The task is created by importing the XML fil to a task. Remember to change the path and servernames to match your environment
+The PowerShell script should be placed in a location where the client can find it (the NETLOGON path could be used)
 
+## Scheduled Task
+Runs the PowerShell script at logon with a 15 second delay
+The argument could be change from running the PowerShell script to run a VBScript, as there is a "bug" when running PowerShell script with the "windowsstyle Hidden", as the PowerShell console force itself to become the active window on the computer, which results in the user is force out of the program in focus.
+
+<table>
+    <tr>
+        <td>COMMAND</td>
+        <td>ARGUMENTS</td>
+    </tr>
+    <tr>
+        <td>PowerShell.exe</td>
+        <td>-windowstyle hidden -executionpolicy bypass -command "& c:\data\SetNetworkPrinters.ps1 -old_servers 'srvdc01','srvdc02' -new_server 'srvprt02'"</td>
+    </tr>
+    <tr>
+        <td>Cscript.exe</td>
+        <td>PRINT-ReMap_scheduledTask-v1.vbs</td>
+    </tr>
+</table>
+
+
+
+## PowerShell Script
 
 <table>
     <tr>
