@@ -16,12 +16,14 @@ New_server    string Name of the new printserver
 
 
 Following steps within the script
-1. Controlling access to the share "PRINT$" on the new printserver
-2. Get all installed printers on the client, that are connected to the old printservers
-
-LOOP BEGIN
-3. Foreach printer from the "old_servers" the printername is replaced by a new value based on the "new_server" 
-4. Control if the printerqueue exists on the new printserver
-5. Control if the printerqueue is "shared", if so, install the printqueue on the client
+1. START transscript
+2. Controlling access to the share "PRINT$" on the new printserver
+3. Get all installed printers on the client, that are connected to the old printservers
+4. BEGIN LOOP - ForEach found printerqueue
+4. Foreach printer from the "old_servers" the printername is replaced by a new value based on the "new_server" 
+5. Control if the printerqueue exists on the new printserver
+6. Control if the printerqueue is "shared", if so, install the printqueue on the client
 7. If the printerqueue is existing "Default printer", then set the new as it
 8. Old printerqueues is uninstalled from the client
+9. END LOOP - ForEach found printerqueue
+10. END Transcript
