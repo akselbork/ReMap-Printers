@@ -1,0 +1,2 @@
+Set objShell = CreateObject("Wscript.shell")
+objShell.run("powershell.exe -windowstyle hidden -executionpolicy bypass -command & c:\data\SetNetworkPrinters.ps1 -old_servers 'srvdc01','srvdc02' -new_server 'srvprt02'"),0
